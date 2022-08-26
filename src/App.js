@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { fetchWeather } from "./Component/fetchWeather";
+import { meteo } from "./Component/Meteo";
 import "./App.css";
 
 const App = () => {
@@ -8,7 +8,7 @@ const App = () => {
 
   const search = async (e) => {
     if (e.key === "Enter") {
-      const data = await fetchWeather(query);
+      const data = await meteo(query);
 
       setWeather(data);
       setQuery("");
@@ -35,6 +35,10 @@ const App = () => {
             {Math.round(weather.main.temp)}
             <sup>&deg;C</sup>
           </div>
+          <div className="city-temp">
+            {Math.round(weather.main.temp_max)}
+            <sup>&deg;C</sup>
+          </div>
           <div className="info">
             <img
               className="city-icon"
@@ -45,10 +49,10 @@ const App = () => {
           </div>
         </div>
       )}
-
-    
     </div>
+    
   );
+
 };
 
 export default App;
