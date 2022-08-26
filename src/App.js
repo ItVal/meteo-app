@@ -35,10 +35,7 @@ const App = () => {
             {Math.round(weather.main.temp)}
             <sup>&deg;C</sup>
           </div>
-          <div className="city-temp">
-            {Math.round(weather.main.temp_max)}
-            <sup>&deg;C</sup>
-          </div>
+         
           <div className="info">
             <img
               className="city-icon"
